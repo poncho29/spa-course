@@ -1,4 +1,4 @@
-import { Header, Main, Router } from "./components";
+import { Header, Loader, Main, Router } from "./components";
 
 export function App() {
   const root = document.getElementById('root');
@@ -6,6 +6,7 @@ export function App() {
   root.innerHTML = '';
   root.appendChild(Header());
   root.appendChild(Main());
+  root.appendChild(Loader());
 
   Router();
 }

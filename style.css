@@ -48,6 +48,13 @@ button:hover {
   opacity: 70%;
 }
 
+.loader {
+  display: block;
+  margin: 1rem auto;
+  width: 4rem;
+  height: 4rem;
+}
+
 /* Header */
 header {
   position: sticky;
@@ -110,4 +117,71 @@ header input {
 
 .card-hero--body p {
   margin: 8px 0;
+}
+
+.card-hero--body a {
+  display: inline-block;
+  color: #FFF;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 0;
+  background-color: #000;
+  cursor: pointer;
+}
+
+.card-hero--body a:hover {
+  opacity: 70%;
+}
+
+/* Hero Detail */
+.hero-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.hero-detail-img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero-detail {
+    flex-direction: row;
+  }
+
+  .hero-detail-img {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+.hero-detail-img button {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+.hero-detail-img img {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.hero-detail-body {
+  width: 100%;
+}
+
+.hero-detail-body h1 {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-detail-body {
+    width: 50%;
+    margin-top: 3.25rem;
+  }
 }

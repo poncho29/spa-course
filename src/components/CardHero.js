@@ -1,6 +1,12 @@
 export function CardHero(props) {
-  const { name, thumbnail, description } = props;
+  const { name, thumbnail, description, id } = props;
   const { path, extension } = thumbnail;
+
+  document.addEventListener('click', e => {
+    if (!e.target.matches('.card-hero--body a')) return;
+
+    localStorage.setItem('heroId', e.target.dataset.id);
+  });
 
   return `
     <article class="card-hero">
@@ -14,7 +20,7 @@ export function CardHero(props) {
           : `<p>No description</p>`
         }
 
-        <button>Ver más</button>
+        <a href="/${id}" data-id="${id}">Ver más</a>
       </div>
     </article>
   `;
