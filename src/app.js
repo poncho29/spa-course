@@ -1,4 +1,5 @@
 import { Header, Loader, Main, Router } from "./components";
+import { infiniteScroll } from "./helpers";
 
 export function App() {
   const root = document.getElementById('root');
@@ -9,4 +10,5 @@ export function App() {
   root.appendChild(Loader());
 
   Router();
+  infiniteScroll();
 }
