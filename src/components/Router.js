@@ -14,14 +14,7 @@ export async function Router() {
     await ajax({
       url: `${URL_BASE}/characters?apikey=${API_KEY_PUBLIC}`,
       callbackSuccess: ({ data }) => {
-        // console.log(data);
-      
-        const { count, total } = data;
-        const totalPages = Math.ceil(total / count);
-
-        pagination.totalPages = totalPages;
-
-        // console.log(pagination);
+        pagination.total =  data.total;
 
         let html = '';
         data.results.forEach(hero => html += CardHero(hero));
@@ -30,8 +23,10 @@ export async function Router() {
       }
     })
   }  else {
+    const heroId = localStorage.getItem('heroId');
+
     await ajax({
-      url: `${URL_BASE}/characters/${localStorage.getItem('heroId')}?apikey=${API_KEY_PUBLIC}`,
+      url: `${URL_BASE}/characters/${heroId}?apikey=${API_KEY_PUBLIC}`,
       callbackSuccess: (post) => {
         main.innerHTML = HeroDetail(post);
       }
